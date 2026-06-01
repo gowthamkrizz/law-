@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Stackly | Premier Legal Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="particle-field" id="particleField"></div>
+  <div class="preloader-content">
+    <div class="scales-loader">
+      <div class="scales-post"></div>
+      <div class="scales-base"></div>
+      <div class="scales-beam">
+        <div class="scales-chain chain-l"><div class="scales-pan pan-l"></div></div>
+        <div class="scales-chain chain-r"><div class="scales-pan pan-r"></div></div>
+      </div>
+    </div>
+    <div class="preloader-logo">Stack<span>ly</span></div>
+    <div class="loading-bar-container"><div class="loading-bar"></div></div>
+    <div class="loading-text">Preparing Your Legal Counsel...</div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <span class="nav-logo" onclick="scrollToHero()">
+    <div class="logo-emblem">⚖</div>
+    <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
+  </span>
+  <ul class="nav-links">
+    <li><a onclick="scrollToHero()" id="nl-home">Home</a></li>
+    <li><a href="404.html" id="nl-about">About</a></li>
+    <li><a href="404.html" id="nl-practice">Practice</a></li>
+    <li><a href="404.html" id="nl-attorneys">Attorneys</a></li>
+    <li><a href="404.html" id="nl-results">Results</a></li>
+    <li><a href="404.html" id="nl-contact">Contact</a></li>
+  </ul>
+  <div class="nav-auth">
+    <button class="btn-login" onclick="showLoginPage()">Client Login</button>
+    <button class="btn-register" onclick="showRegisterPage()">Free Consultation</button>
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="scrollToHero();closeMenu()">Home</a>
+  <a href="404.html" onclick="closeMenu()">About</a>
+  <a href="404.html" onclick="closeMenu()">Practice Areas</a>
+  <a href="404.html" onclick="closeMenu()">Attorneys</a>
+  <a href="404.html" onclick="closeMenu()">Results</a>
+  <a href="404.html" onclick="closeMenu()">Contact</a>
+  <div class="mobile-divider"></div>
+  <div class="mobile-auth">
+    <button class="btn-login" onclick="showLoginPage();closeMenu()">Client Login</button>
+    <button class="btn-register" onclick="showRegisterPage();closeMenu()">Consult Free</button>
+  </div>
+</div>
+
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero" id="hero-sec">
+    <div class="hero-bg-texture"></div>
+    <div class="hero-vignette"></div>
+    <div class="hero-orb1"></div>
+    <div class="hero-orb2"></div>
+    <div class="particles-home" id="particles"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge"><span class="badge-pulse"></span>Established 1987 — AV Preeminent Rated</div>
+      <h1 class="hero-title">
+        When Justice<br>
+        Demands <span class="grad">Excellence</span><br>
+        <em>We Deliver.</em>
+      </h1>
+      <p class="hero-sub">Stackly brings four decades of courtroom mastery and boardroom strategy to protect what matters most. Trusted by Fortune 500 corporations, sovereign entities, and individuals facing their defining moments.</p>
+      <div class="hero-actions">
+        <button class="btn-prim" onclick="showRegisterPage()">Schedule Consultation →</button>
+        <button class="btn-sec" onclick="window.location.href='404.html'">View Our Record</button>
+      </div>
+      <div class="hero-tags">
+        <span class="tag">⚖ Litigation</span>
+        <span class="tag">🏛 Corporate Law</span>
+        <span class="tag">🔒 Confidential</span>
+        <span class="tag">🌐 International</span>
+      </div>
+    </div>
+
+    <!-- 3D Visual -->
+    <div class="hero-visual">
+      <div class="scales-3d-wrap">
+        <div class="glow-ring gr1"><div class="gdot gd1"></div></div>
+        <div class="glow-ring gr2"><div class="gdot gd2"></div></div>
+        <div class="glow-ring gr3"><div class="gdot gd3"></div></div>
+        <svg viewBox="0 0 200 200" width="200" height="200" style="position:relative;z-index:1">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect x="70" y="175" width="60" height="4" rx="2" fill="#C9A84C" opacity=".7"/>
+          <rect x="98" y="85" width="4" height="90" rx="2" fill="#C9A84C" opacity=".8"/>
+          <circle cx="100" cy="82" r="5" fill="#C9A84C" filter="url(#glow)"/>
+          <g style="transform-origin:100px 82px;animation:scalesTip 3.5s ease-in-out infinite">
+            <line x1="30" y1="82" x2="170" y2="82" stroke="#C9A84C" stroke-width="2" opacity=".9"/>
+            <line x1="40" y1="82" x2="40" y2="120" stroke="#C9A84C" stroke-width="1" opacity=".6"/>
+            <path d="M22,120 Q40,126 58,120" fill="none" stroke="#C9A84C" stroke-width="2" opacity=".85"/>
+            <line x1="160" y1="82" x2="160" y2="118" stroke="#C9A84C" stroke-width="1" opacity=".6"/>
+            <path d="M142,118 Q160,124 178,118" fill="none" stroke="#C9A84C" stroke-width="2" opacity=".85"/>
+          </g>
+          <circle cx="100" cy="62" r="12" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity=".5"/>
+          <text x="100" y="67" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="#C9A84C" font-style="italic" opacity=".8">Stack</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats-bar" id="about">
+    <div class="stat-item sr"><span class="stat-num" data-count="4800">0</span><span class="stat-label">Cases Won</span></div>
+    <div class="stat-item sr d1"><span class="stat-num" data-count="98">0</span><span class="stat-label">% Success Rate</span></div>
+    <div class="stat-item sr d2"><span class="stat-num" data-count="38">0</span><span class="stat-label">Years of Excellence</span></div>
+    <div class="stat-item sr d3"><span class="stat-num">24/7</span><span class="stat-label">Client Support</span></div>
+  </div>
+
+  <!-- PRACTICE AREAS -->
+  <section class="sec" id="practice" style="background:var(--bg2)">
+    <div class="sec-label sr">Our Expertise</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+      <h2 class="sec-title sr">Premier Practice<br>Areas</h2>
+      <button class="btn-sec sr" onclick="window.location.href='404.html'">All Practice Areas →</button>
+    </div>
+    <div class="services-grid">
+      <div class="s-card sr d1"><div class="s-icon">⚖</div><h3>Corporate Litigation</h3><p>High-stakes commercial disputes, breach of contract, shareholder conflicts, and class action defense for Fortune 500 entities.</p><div><span class="t-badge">Commercial</span><span class="t-badge">Class Action</span></div></div>
+      <div class="s-card sr d2"><div class="s-icon">🏛</div><h3>Mergers & Acquisitions</h3><p>Strategic counsel on cross-border M&amp;A transactions, due diligence, regulatory approvals, and post-merger integration disputes.</p><div><span class="t-badge">M&amp;A</span><span class="t-badge">Due Diligence</span></div></div>
+      <div class="s-card sr d3"><div class="s-icon">🌐</div><h3>International Arbitration</h3><p>ICSID, ICC, and UNCITRAL proceedings. Representation in investor-state and commercial arbitration across 60 jurisdictions.</p><div><span class="t-badge">ICSID</span><span class="t-badge">ICC</span></div></div>
+      <div class="s-card sr d1"><div class="s-icon">🔒</div><h3>White-Collar Defense</h3><p>Discreet defense in securities fraud, corruption, FCPA violations, insider trading, and complex regulatory investigations.</p><div><span class="t-badge">SEC</span><span class="t-badge">DOJ</span></div></div>
+      <div class="s-card sr d2"><div class="s-icon">💼</div><h3>Employment & Labor</h3><p>Executive compensation, non-compete disputes, wrongful termination, and workplace discrimination defense at every level.</p><div><span class="t-badge">C-Suite</span><span class="t-badge">EEOC</span></div></div>
+      <div class="s-card sr d3"><div class="s-icon">🏠</div><h3>Real Estate & Property</h3><p>Complex commercial acquisitions, zoning disputes, title litigation, and landmark development negotiations.</p><div><span class="t-badge">Commercial</span><span class="t-badge">Zoning</span></div></div>
+    </div>
+  </section>
+
+  <!-- NOTABLE WORK -->
+  <section class="sec" id="results">
+    <div class="sec-label sr">Landmark Results</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+      <h2 class="sec-title sr">Victories That<br>Defined Industries</h2>
+      <p class="sec-sub sr" style="font-size:.84rem">$4.2B+ recovered for clients. Zero compromises.</p>
+    </div>
+    <div class="img-grid sr">
+      <div class="ic"><img src="./img/666933a7aa7b6e37c36a956c_6e6124b2-f0ea-4137-9b28-8223c9cf5269 (1).webp" alt="Courtroom"/><div class="ic-ov"><span>Courtroom Advocacy →</span></div></div>
+      <div class="ic"><img src="./img/business-male-lawyer-judge-consult-having-team-meeting-client-law-legal-services-concept-customer-service-good-433211513.webp" alt="Corporate"/><div class="ic-ov"><span>Corporate Defense →</span></div></div>
+      <div class="ic"><img src="./img/images (3).webp" alt="Negotiation"/><div class="ic-ov"><span>High-Stakes Negotiation →</span></div></div>
+      <div class="ic"><img src="./img/images.webp" alt="M&A"/><div class="ic-ov"><span>M&amp;A Advisory →</span></div></div>
+      <div class="ic"><img src="./img/images (1).webp" alt="International"/><div class="ic-ov"><span>International Arbitration →</span></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:3rem">
+      <div class="tilt-card sr d1"><div class="tilt-glow"></div><div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">$</div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">$1.4B Verdict</h3><p style="font-size:.82rem;color:var(--text2);line-height:1.7">Securities fraud class action — largest verdict in state history. Represented 40,000+ institutional investors.</p><p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">Financial Services →</p></div>
+      <div class="tilt-card sr d2"><div class="tilt-glow"></div><div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">🌐</div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">Cross-Border Acquittal</h3><p style="font-size:.82rem;color:var(--text2);line-height:1.7">Secured full acquittal in multi-jurisdictional FCPA prosecution spanning 5 countries over 3 years.</p><p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">White-Collar Defense →</p></div>
+      <div class="tilt-card sr d3"><div class="tilt-glow"></div><div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">🏛</div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">$800M M&A Defense</h3><p style="font-size:.82rem;color:var(--text2);line-height:1.7">Successfully defended hostile takeover bid, preserving board control and shareholder value for a global pharmaceutical.</p><p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">M&amp;A Litigation →</p></div>
+    </div>
+  </section>
+
+  <!-- ATTORNEYS -->
+  <section class="sec" id="attorneys" style="background:var(--bg2)">
+    <div class="sec-label sr">Our Counsel</div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:0">
+      <h2 class="sec-title sr">Attorneys of<br>Distinction</h2>
+      <button class="btn-sec sr" onclick="window.location.href='404.html'">Full Team →</button>
+    </div>
+    <div class="attorneys-grid">
+      <div class="attorney-card sr d1">
+        <div class="attorney-img"><img src="./img/Attorney-Ethics-Lawyer.webp.bv_resized_mobile.webp.bv.webp" alt="Attorney"/><div class="attorney-img-overlay"></div></div>
+        <div class="attorney-info">
+          <div class="attorney-name">James R. Whitmore</div>
+          <div class="attorney-role">Senior Partner · 32 Years</div>
+          <div class="attorney-spec">Corporate litigation and M&A. Former U.S. Circuit Court clerk. 1,200+ cases tried to verdict.</div>
+        </div>
+      </div>
+      <div class="attorney-card sr d2">
+        <div class="attorney-img"><img src="./img/images (2).webp" alt="Attorney"/><div class="attorney-img-overlay"></div></div>
+        <div class="attorney-info">
+          <div class="attorney-name">Priya Nair-Chandran</div>
+          <div class="attorney-role">Partner · International Law</div>
+          <div class="attorney-spec">ICC and ICSID arbitration specialist. Counsel in 28 jurisdictions across Asia-Pacific and Europe.</div>
+        </div>
+      </div>
+      <div class="attorney-card sr d3">
+        <div class="attorney-img"><img src="./img/images (6).webp" alt="Attorney"/><div class="attorney-img-overlay"></div></div>
+        <div class="attorney-info">
+          <div class="attorney-name">Marcus T. Ellsworth</div>
+          <div class="attorney-role">Partner · White-Collar</div>
+          <div class="attorney-spec">Former DOJ Fraud Section prosecutor. Unmatched insight into federal investigations and complex regulatory matters.</div>
+        </div>
+      </div>
+      <div class="attorney-card sr d4">
+        <div class="attorney-img"><img src="./img/images (5).webp" alt="Attorney"/><div class="attorney-img-overlay"></div></div>
+        <div class="attorney-info">
+          <div class="attorney-name">Dr. Sofia Aldecoa</div>
+          <div class="attorney-role">Of Counsel · Employment</div>
+          <div class="attorney-spec">Executive compensation, board governance, and high-profile employment disputes. Former EEOC legal advisor.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="sec" id="process">
+    <div class="sec-label sr">Our Approach</div>
+    <h2 class="sec-title sr">From First Counsel<br>to Final Victory</h2>
+    <div class="process-wrap">
+      <div class="p-step sr d1"><div class="p-num">I</div><p class="p-title">Confidential Intake</p><p class="p-desc">Attorney-privileged consultation. We assess your matter with full discretion and no obligation.</p></div>
+      <div class="p-step sr d2"><div class="p-num">II</div><p class="p-title">Strategy</p><p class="p-desc">Bespoke legal strategy crafted by senior partners with decades in your specific area.</p></div>
+      <div class="p-step sr d3"><div class="p-num">III</div><p class="p-title">Preparation</p><p class="p-desc">Exhaustive discovery, expert witnesses, and evidence architecture built to withstand any challenge.</p></div>
+      <div class="p-step sr d4"><div class="p-num">IV</div><p class="p-title">Advocacy</p><p class="p-desc">Relentless courtroom or negotiating table representation by trial-tested attorneys.</p></div>
+      <div class="p-step sr d5"><div class="p-num">V</div><p class="p-title">Resolution</p><p class="p-desc">Enforcement of judgments, appeals management, and long-term protection of your interests.</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="sec" style="background:var(--bg2)">
+    <div class="sec-label sr">Client Confidence</div>
+    <div class="test-wrap sr">
+      <p class="test-text">"When our company faced the most serious securities litigation in its history, Stackly's team was the only call we needed to make. They didn't just defend us — they dismantled the opposing case with surgical precision and secured a complete dismissal. We owe our company's survival to their brilliance."</p>
+      <div class="test-author">
+        <div class="t-av">RK</div>
+        <div><p class="t-name">Robert Kessler</p><p class="t-role">Chief Executive Officer — Meridian Capital Group</p></div>
+      </div>
+    </div>
+    <div class="img-row">
+      <div class="irc sr d1"><img src="./img/images (4).webp" alt="Office"/><div class="ic-ov"><span>Our Offices</span></div></div>
+      <div class="irc sr d2"><img src="./img/1183175189-640w.webp" alt="Library"/><div class="ic-ov"><span>Legal Research</span></div></div>
+      <div class="irc sr d3"><img src="./img/legal-services-concept-gavel-word-legal-services-sound-block-legal-services-101424374.webp" alt="Strategy"/><div class="ic-ov"><span>Case Strategy</span></div></div>
+      <div class="irc sr d4"><img src="./img/business-law-firm.webp" alt="Client"/><div class="ic-ov"><span>Client Advisory</span></div></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-sec" id="contact">
+    <div class="cta-box sr">
+      <div class="hero-badge" style="margin:0 auto 1.5rem;display:inline-flex"><span class="badge-pulse"></span>Privileged & Confidential — No Commitment</div>
+      <h2>Your Legal Matter<br>Demands the Best</h2>
+      <div class="gold-divider" style="margin:1rem auto 1.5rem"></div>
+      <p>Speak directly with a senior partner. We review every case personally and respond within 4 hours.</p>
+      <div class="cta-acts">
+        <button class="btn-prim" onclick="showRegisterPage()">Request Consultation →</button>
+        <button class="btn-sec" onclick="window.location.href='404.html'">View Practice Areas</button>
+      </div>
+      <p style="color:var(--text3);font-size:.74rem;margin-top:1.8rem;letter-spacing:.06em">contact@stackly.com · 6383688595 · All inquiries attorney-client privileged</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="ft-brand-name" onclick="scrollToHero()">
+          <div class="logo-emblem" style="width:26px;height:26px;font-size:.65rem">⚖</div>
+          <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
+        </div>
+        <div class="ft-tagline">Justice. Precision. Excellence.</div>
+        <p>Corporate legal counsel trusted by sovereign entities, Fortune 500 companies, and individuals in defining moments since 1987.</p>
+        <div class="ft-socials">
+          <a class="soc-btn" href="404.html"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+          <a class="soc-btn" href="404.html"><svg viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg></a>
+          <a class="soc-btn" href="404.html"><svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg></a>
+        </div>
+      </div>
+      <div class="ft-col"><h4>Firm</h4><a href="404.html">About Stackly</a><a href="404.html">Notable Cases</a><a href="404.html">Awards & Rankings</a><a href="404.html">Careers</a><a href="404.html">Pro Bono</a></div>
+      <div class="ft-col"><h4>Home</h4><a href="404.html">about</a><a href="404.html">M&amp;practice </a><a href="404.html">attorneys</a><a href="404.html">results </a><a href="404.html">contact</a></div>
+      <div class="ft-col"><h4>Client</h4><a onclick="showLoginPage()">Client Portal</a><a onclick="showRegisterPage()">Free Consultation</a><a href="404.html">Legal Resources</a><a href="404.html">Emergency Counsel</a><a href="404.html">Pay Invoice</a></div>
+    </div>
+    <div class="ft-disclaimer">Attorney advertising. Prior results do not guarantee a similar outcome. Stackly LLP is licensed to practice law in all 50 U.S. states and select international jurisdictions. © 2026 Stackly LLP — All rights reserved.</div>
+    <div class="ft-bot" style="margin-top:.75rem">
+      <span>© 2026 Stackly LLP — All Rights Reserved</span>
+      <span>Justice Without Compromise</span>
+    </div>
+  </footer>
+</div>
+
+<!-- LOGIN PAGE -->
+<div class="page" id="page-login">
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <div class="auth-logo" onclick="showHomePage()">
+        <span class="logo-emblem" style="display:inline-flex;margin-right:6px;vertical-align:middle;background:rgba(201,168,76,.1);border:1px solid var(--gold);width:24px;height:24px;border-radius:50%;align-items:center;justify-content:center;font-size:.7rem;color:var(--gold)">⚖</span>
+        <span>Stack<b>ly</b></span>
+      </div>
+      <h2>Client Portal</h2>
+      <p class="sub">Sign in to access your secure matter files and case updates</p>
+      <div class="error-msg" id="login-err">Invalid credentials. Please try again or contact your case manager.</div>
+      <div class="success-msg" id="login-ok">Authentication successful. Redirecting to your portal...</div>
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group"><label>Email Address</label><input type="email" id="l-email" placeholder="attorney@yourfirm.com" required/></div>
+        <div class="form-group"><label>Password</label><input type="password" id="l-pass" placeholder="Enter your secure password" required/></div>
+        <a class="forgot-link" href="404.html">Forgot access credentials?</a>
+        <button type="submit" class="auth-btn">Access Client Portal</button>
+      </form>
+      <p class="auth-switch">New client? <a onclick="showRegisterPage()">Request a consultation</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- REGISTER PAGE -->
+<div class="page" id="page-register">
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <div class="auth-logo" onclick="showHomePage()">
+        <span class="logo-emblem" style="display:inline-flex;margin-right:6px;vertical-align:middle;background:rgba(201,168,76,.1);border:1px solid var(--gold);width:24px;height:24px;border-radius:50%;align-items:center;justify-content:center;font-size:.7rem;color:var(--gold)">⚖</span>
+        <span>Stack<b>ly</b></span>
+      </div>
+      <h2>Request Consultation</h2>
+      <p class="sub">Privileged and confidential. A senior partner will respond within 4 hours.</p>
+      <div class="error-msg" id="reg-err" style="display:none"></div>
+      <div class="success-msg" id="reg-ok" style="display:none"></div>
+      <form id="registerForm" onsubmit="handleRegister(event)">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="r-first" placeholder="John" required/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="r-last" placeholder="Smith" required/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="r-email" placeholder="john@company.com" required/></div>
+        <div class="form-group"><label>Company / Organisation</label><input type="text" id="r-company" placeholder="Smith Holdings LLC" required/></div>
+        <div class="form-group"><label>Password</label><input type="password" id="r-pass" placeholder="Create a secure password" required/></div>
+        <div class="form-group"><label>Confirm Password</label><input type="password" id="r-pass2" placeholder="Repeat password" required/></div>
+        <div class="form-check"><input type="checkbox" id="r-terms" required/><label>I acknowledge the <a href="404.html">Terms of Engagement</a> and attorney-client privilege</label></div>
+        <button type="submit" class="auth-btn">Request Confidential Consultation</button>
+      </form>
+      <p class="auth-switch">Existing client? <a onclick="showLoginPage()">Access your portal</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+function scrollToHero(){
+  const pages=['page-home','page-login','page-register'];
+  pages.forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active')});
+  document.getElementById('page-home').classList.add('active');
+  const hero=document.getElementById('hero-sec');
+  if(hero)hero.scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active-link'));
+  document.getElementById('nl-home').classList.add('active-link');
+  setTimeout(()=>initReveal(),100);
+}
+
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    const p=document.getElementById('preloader');
+    p.classList.add('preloader-hidden');
+    setTimeout(()=>p.style.display='none',900);
+  },2800);
+});
+
+const pf=document.getElementById('particleField');
+if(pf){for(let i=0;i<50;i++){const p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';p.style.animationDuration=(3+Math.random()*5)+'s';p.style.animationDelay=(Math.random()*6)+'s';const s=(2+Math.random()*3)+'px';p.style.width=s;p.style.height=s;pf.appendChild(p);}}
+
+function showHomePage(){
+  ['page-home','page-login','page-register'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active')});
+  document.getElementById('page-home').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(()=>initReveal(),100);
+}
+function showLoginPage(){
+  ['page-home','page-login','page-register'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active')});
+  document.getElementById('page-login').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function showRegisterPage(){
+  ['page-home','page-login','page-register'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active')});
+  document.getElementById('page-register').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function handleLogin(e){
+  e.preventDefault();
+  const email=document.getElementById('l-email').value.trim();
+  const pass=document.getElementById('l-pass').value;
+  const errEl=document.getElementById('login-err');
+  const okEl=document.getElementById('login-ok');
+  errEl.classList.remove('show');okEl.classList.remove('show');
+  if(!email||!pass){errEl.textContent='Please complete all fields.';errEl.classList.add('show');return;}
+  if(pass.length<6){errEl.textContent='Password must be at least 6 characters.';errEl.classList.add('show');return;}
+  const btn=e.target.querySelector('.auth-btn');
+  if(btn){btn.textContent='Authenticating…';btn.disabled=true;}
+  setTimeout(()=>{
+    okEl.textContent='Identity verified. Preparing your portal...';okEl.classList.add('show');
+    if(btn){btn.textContent='Access Client Portal';btn.disabled=false;}
+    setTimeout(()=>window.location.href='404.html',1500);
+  },1300);
+}
+
+function handleRegister(e){
+  e.preventDefault();
+  const first=document.getElementById('r-first').value.trim();
+  const last=document.getElementById('r-last').value.trim();
+  const email=document.getElementById('r-email').value.trim();
+  const company=document.getElementById('r-company').value.trim();
+  const pass=document.getElementById('r-pass').value;
+  const pass2=document.getElementById('r-pass2').value;
+  const terms=document.getElementById('r-terms').checked;
+  const errEl=document.getElementById('reg-err');
+  const okEl=document.getElementById('reg-ok');
+  errEl.style.display='none';okEl.style.display='none';
+  if(!first||!last||!email||!company||!pass||!pass2){errEl.textContent='Please complete all required fields.';errEl.style.display='block';return;}
+  if(pass.length<8){errEl.textContent='Password must be at least 8 characters.';errEl.style.display='block';return;}
+  if(pass!==pass2){errEl.textContent='Passwords do not match.';errEl.style.display='block';return;}
+  if(!terms){errEl.textContent='Please acknowledge the Terms of Engagement.';errEl.style.display='block';return;}
+  const btn=e.target.querySelector('.auth-btn');
+  if(btn){btn.textContent='Submitting Request…';btn.disabled=true;}
+  setTimeout(()=>{
+    okEl.textContent='Request received. A senior partner will contact you within 4 hours.';okEl.style.display='block';
+    if(btn){btn.textContent='Request Confidential Consultation';btn.disabled=false;}
+    setTimeout(()=>window.location.href='404.html',1800);
+  },1500);
+}
+
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{if(navbar)navbar.classList.toggle('scrolled',window.scrollY>50)});
+
+const hamburger=document.getElementById('hamburger');
+const mobileMenu=document.getElementById('mobileMenu');
+let _scrollY=0;
+function openMenu(){
+  _scrollY=window.scrollY;
+  document.body.classList.add('menu-open');
+  document.body.style.top=`-${_scrollY}px`;
+  hamburger.classList.add('open');
+  mobileMenu.classList.add('open');
+}
+function closeMenu(){
+  document.body.classList.remove('menu-open');
+  document.body.style.top='';
+  window.scrollTo(0,_scrollY);
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}
+if(hamburger){hamburger.addEventListener('click',()=>{mobileMenu.classList.contains('open')?closeMenu():openMenu();})}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+
+let revealObs;
+function initReveal(){
+  if(revealObs)revealObs.disconnect();
+  revealObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');revealObs.unobserve(e.target);}});
+  },{threshold:.1});
+  document.querySelectorAll('#page-home .sr,#page-home .sr-l,#page-home .sr-r').forEach(el=>{el.classList.remove('vis');revealObs.observe(el);});
+}
+initReveal();
+
+const countObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target;
+    const target=parseInt(el.dataset.count);
+    if(!target)return;
+    let startTs=null;
+    const step=ts=>{
+      if(!startTs)startTs=ts;
+      const prog=Math.min((ts-startTs)/2000,1);
+      el.textContent=Math.floor(prog*target).toLocaleString()+'+';
+      if(prog<1)requestAnimationFrame(step);
+      else el.textContent=target.toLocaleString()+'+';
+    };
+    requestAnimationFrame(step);
+    countObs.unobserve(el);
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>countObs.observe(el));
+
+const pCont=document.getElementById('particles');
+if(pCont){for(let i=0;i<18;i++){const p=document.createElement('div');p.className='particle-dot';p.style.cssText=`left:${Math.random()*100}%;animation-duration:${11+Math.random()*14}s;animation-delay:${Math.random()*14}s;opacity:${.1+Math.random()*.2}`;pCont.appendChild(p);}}
+
+document.querySelectorAll('.tilt-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    const x=(e.clientX-r.left)/r.width-.5;
+    const y=(e.clientY-r.top)/r.height-.5;
+    card.style.transform=`translateY(-7px) rotateX(${-y*10}deg) rotateY(${x*10}deg)`;
+  });
+  card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+
+document.getElementById('nl-home').classList.add('active-link');
+</script>
+</body>
+</html>

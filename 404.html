@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>404 — Page Not Found | Stackly</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+  /* 404-specific styles not in style.css */
+  body{display:flex;flex-direction:column;min-height:100vh}
+  #page-404{
+    display:flex;align-items:center;justify-content:center;
+    min-height:100vh;padding-top:70px;
+    background:var(--bg);text-align:center;
+    flex:1;
+  }
+  .err-wrap{padding:2rem;position:relative}
+  .err-404{font-family:'Cormorant Garamond',serif;font-size:clamp(7rem,20vw,14rem);font-weight:700;line-height:1;background:linear-gradient(135deg,var(--gold3),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeInDown .8s ease both;font-style:italic}
+  .err-wrap h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600;color:var(--ivory);margin-bottom:.8rem;animation:fadeInUp .8s .15s ease both;font-style:italic}
+  .err-wrap p{color:var(--text2);font-size:.95rem;margin-bottom:2rem;animation:fadeInUp .8s .3s ease both;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.8}
+  .err-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeInUp .8s .45s ease both}
+  .err-orb{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.07),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:-1}
+  .back-home-btn{background:var(--gold);color:var(--bg);padding:.88rem 2.2rem;border-radius:3px;font-weight:700;font-size:.8rem;cursor:pointer;border:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+  .back-home-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px var(--shadow2);background:var(--gold2)}
+  .btn-sec-link{background:transparent;color:var(--gold);padding:.88rem 2.2rem;border-radius:3px;font-weight:500;font-size:.8rem;cursor:pointer;border:1px solid rgba(201,168,76,.4);transition:all .3s;display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;text-decoration:none;letter-spacing:.1em;text-transform:uppercase}
+  .btn-sec-link:hover{border-color:var(--gold);background:rgba(201,168,76,.07)}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a class="nav-logo" href="index.html">
+    <div class="logo-emblem">⚖</div>
+    <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#practice">Practice</a></li>
+    <li><a href="index.html#attorneys">Attorneys</a></li>
+    <li><a href="index.html#results">Results</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-auth">
+    <a class="btn-login" href="login.html">Client Login</a>
+    <a class="btn-register" href="register.html">Free Consultation</a>
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="index.html#practice" onclick="closeMenu()">Practice Areas</a>
+  <a href="index.html#attorneys" onclick="closeMenu()">Attorneys</a>
+  <a href="index.html#results" onclick="closeMenu()">Results</a>
+  <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+  <div class="mobile-divider"></div>
+  <div class="mobile-auth">
+    <a class="btn-login" href="login.html">Client Login</a>
+    <a class="btn-register" href="register.html">Consult Free</a>
+  </div>
+</div>
+
+<!-- 404 CONTENT -->
+<div id="page-404">
+  <div class="err-wrap">
+    <div class="err-orb"></div>
+    <div class="err-404">404</div>
+    <h2>Page Not Found</h2>
+    <p>The page you seek appears to have left the jurisdiction. Let us guide you back to solid legal ground.</p>
+    <div class="err-actions">
+      <a class="back-home-btn" href="index.html">⟵ Return to Stackly</a>
+      <a class="btn-sec-link" href="index.html#contact">Contact Us</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+</script>
+</body>
+</html>
