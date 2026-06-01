@@ -29,9 +29,9 @@
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <span class="nav-logo" onclick="location.reload();">
-    <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
-  </span>
+  <span class="nav-logo" onclick="goToHomePage()">
+  <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
+</span>
   <ul class="nav-links">
     <li><a onclick="scrollToHero()" id="nl-home">Home</a></li>
     <li><a href="404.html" id="nl-about">About</a></li>
@@ -408,9 +408,9 @@
   <footer>
     <div class="ft-grid">
       <div class="ft-brand">
-        <div class="ft-brand-name" onclick="location.reload();" style="cursor:pointer">
-          <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
-        </div>
+        <div class="ft-brand-name" onclick="goToHomePage()" style="cursor:pointer">
+  <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
+</div>
         <div class="ft-tagline">Justice. Precision. Excellence.</div>
         <p>Corporate legal counsel trusted by sovereign entities, Fortune 500 companies, and individuals in defining moments since 1987.</p>
         <div class="ft-socials">
@@ -533,6 +533,9 @@ document.getElementById('nl-home').classList.add('active-link');
 const mobileHomeLink = document.getElementById('mobile-home');
 if(mobileHomeLink) {
   mobileHomeLink.style.color = 'var(--gold)';
+  function goToHomePage() {
+  window.location.href = 'index.html';
+}
 }
 </script>
 </body>
