@@ -771,11 +771,88 @@ section.sec{padding:5.5rem 5%;position:relative}
 .ic:hover .ic-ov{opacity:1}
 .ic-ov span{font-size:.78rem;font-weight:600;color:var(--gold);letter-spacing:.08em;text-transform:uppercase}
 
-.img-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.8rem;margin-top:2.5rem}
-.irc{border-radius:3px;overflow:hidden;height:190px;position:relative}
-.irc img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;display:block;filter:brightness(.8) sepia(.25)}
-.irc:hover img{transform:scale(1.07);filter:brightness(.9) sepia(.1)}
-.irc .ic-ov{display:flex}
+/* FIXED: Client Confidence Images - No Overflow */
+.img-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.irc {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.4s ease;
+}
+
+.irc img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.irc:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+.irc:hover img {
+  transform: scale(1.05);
+}
+
+.irc .ic-ov {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+}
+
+.irc .ic-ov span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.irc:hover .ic-ov {
+  padding-bottom: 1.2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%);
+}
+
+/* Responsive - Tablet */
+@media (max-width: 768px) {
+  .img-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  .img-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
 
 /* PROCESS */
 .process-wrap{display:flex;gap:0;margin-top:3rem;position:relative}
@@ -933,6 +1010,352 @@ footer{background:var(--surface);border-top:1px solid var(--border);padding:4.5r
   .hero-sub{font-size:.86rem}
   .mobile-menu a{font-size:1.9rem}
   .cta-box{padding:2.5rem 1rem}
-  .attorneys-grid{grid-template-columns:1fr 1fr}
+  .attorneys-grid{grid-template-columns:1fr }
 }
 html,body{overflow-x:hidden;width:100%}
+/* ============================================================
+   NEW SECTIONS STYLES
+   ============================================================ */
+
+/* Images text always visible */
+.ic-ov.always-visible {
+  opacity: 1 !important;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+/* Why Choose Stackly Section */
+.why-stackly {
+  background: var(--bg3);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.why-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.why-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.why-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ivory);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.why-card p {
+  color: var(--text2);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+/* Recognition Section */
+.recognition {
+  background: var(--bg);
+}
+
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.recog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.8rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.recog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.recog-card:hover::before {
+  opacity: 1;
+}
+
+.recog-card:hover {
+  transform: translateX(5px);
+  border-color: var(--gold);
+}
+
+.recog-year {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.recog-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--ivory);
+  margin-bottom: 0.25rem;
+  font-style: italic;
+}
+
+.recog-org {
+  font-size: 0.7rem;
+  color: var(--text3);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+}
+
+.recog-card p {
+  color: var(--text2);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Enhanced Testimonials */
+.testimonial-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.test-wrap {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.test-wrap::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8rem;
+  color: rgba(201,168,76,0.05);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.test-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--ivory2);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.test-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Footer Home Link - Golden Color */
+.ft-col a[href="#"]:first-of-type,
+.ft-col a[onclick*="scrollToHero"] {
+  color: var(--gold) !important;
+}
+
+.ft-col a[onclick*="scrollToHero"]:hover {
+  color: var(--gold2) !important;
+}
+
+/* Mobile Menu Home Button - Golden Color */
+#mobile-home {
+  color: var(--gold) !important;
+}
+
+#mobile-home:hover {
+  color: var(--gold2) !important;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+  .why-grid,
+  .recognition-grid,
+  .testimonial-showcase {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .recog-card:hover {
+    transform: translateX(0);
+  }
+  
+  .test-wrap {
+    padding: 1.5rem;
+  }
+} 
+/* Fix for Client Confidence Images Position */
+.img-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.irc {
+  border-radius: 3px;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+}
+
+.irc img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+  display: block;
+  filter: brightness(0.8) sepia(0.25);
+}
+
+.irc:hover img {
+  transform: scale(1.07);
+  filter: brightness(0.9) sepia(0.1);
+}
+
+.irc .ic-ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.irc:hover .ic-ov {
+  opacity: 1;
+}
+
+.irc .ic-ov span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Testimonials grid fix */
+.testimonial-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.test-wrap {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .img-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonial-showcase {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .img-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Testimonial cards fix */
+.testimonial-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.test-wrap {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem;
+  height: auto;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  flex: 1;
+}
+
+.test-wrap::before {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .testimonial-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-showcase {
+    grid-template-columns: 1fr;
+  }
+}

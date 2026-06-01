@@ -29,8 +29,7 @@
 
 <!-- NAVBAR -->
 <nav id="navbar">
-  <span class="nav-logo" onclick="scrollToHero()">
-    
+  <span class="nav-logo" onclick="location.reload();">
     <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
   </span>
   <ul class="nav-links">
@@ -42,25 +41,25 @@
     <li><a href="404.html" id="nl-contact">Contact</a></li>
   </ul>
   <div class="nav-auth">
-  <button class="btn-login" onclick="window.location.href='404.html'">Client Login</button>
-  <button class="btn-register" onclick="window.location.href='404.html'">Free Consultation</button>
-</div>
+    <button class="btn-login" onclick="window.location.href='404.html'">Client Login</button>
+    <button class="btn-register" onclick="window.location.href='404.html'">Free Consultation</button>
+  </div>
   <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </nav>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a onclick="scrollToHero();closeMenu()">Home</a>
+  <a onclick="scrollToHero();closeMenu()" id="mobile-home">Home</a>
   <a href="404.html" onclick="closeMenu()">About</a>
-  <a href="404.html" onclick="closeMenu()">Practice Areas</a>
+  <a href="404.html" onclick="closeMenu()">Practice </a>
   <a href="404.html" onclick="closeMenu()">Attorneys</a>
   <a href="404.html" onclick="closeMenu()">Results</a>
   <a href="404.html" onclick="closeMenu()">Contact</a>
   <div class="mobile-divider"></div>
- <div class="mobile-auth">
-  <button class="btn-login" onclick="window.location.href='404.html';closeMenu()">Client Login</button>
-  <button class="btn-register" onclick="window.location.href='404.html';closeMenu()">Consult Free</button>
-</div>
+  <div class="mobile-auth">
+    <button class="btn-login" onclick="window.location.href='404.html';closeMenu()">Client Login</button>
+    <button class="btn-register" onclick="window.location.href='404.html';closeMenu()">Consult Free</button>
+  </div>
 </div>
 
 <!-- HOME PAGE -->
@@ -83,7 +82,7 @@
       </h1>
       <p class="hero-sub">Stackly brings four decades of courtroom mastery and boardroom strategy to protect what matters most. Trusted by Fortune 500 corporations, sovereign entities, and individuals facing their defining moments.</p>
       <div class="hero-actions">
-        <button class="btn-prim" onclick="showRegisterPage()">Schedule Consultation →</button>
+        <button class="btn-prim" onclick="window.location.href='404.html'">Schedule Consultation →</button>
         <button class="btn-sec" onclick="window.location.href='404.html'">View Our Record</button>
       </div>
       <div class="hero-tags">
@@ -144,12 +143,12 @@
       <div class="s-card sr d2"><div class="s-icon">🏛</div><h3>Mergers & Acquisitions</h3><p>Strategic counsel on cross-border M&amp;A transactions, due diligence, regulatory approvals, and post-merger integration disputes.</p><div><span class="t-badge">M&amp;A</span><span class="t-badge">Due Diligence</span></div></div>
       <div class="s-card sr d3"><div class="s-icon">🌐</div><h3>International Arbitration</h3><p>ICSID, ICC, and UNCITRAL proceedings. Representation in investor-state and commercial arbitration across 60 jurisdictions.</p><div><span class="t-badge">ICSID</span><span class="t-badge">ICC</span></div></div>
       <div class="s-card sr d1"><div class="s-icon">🔒</div><h3>White-Collar Defense</h3><p>Discreet defense in securities fraud, corruption, FCPA violations, insider trading, and complex regulatory investigations.</p><div><span class="t-badge">SEC</span><span class="t-badge">DOJ</span></div></div>
-      <div class="s-card sr d2"><div class="s-icon">💼</div><h3>Employment & Labor</h3><p>Executive compensation, non-compete disputes, wrongful termination, and workplace discrimination defense at every level.</p><div><span class="t-badge">C-Suite</span><span class="t-badge">EEOC</span></div></div>
+      <div class="s-card sr d2"><div class="s-icon">💼</div><h3>Employment & Labour</h3><p>Executive compensation, non-compete disputes, wrongful termination, and workplace discrimination defense at every level.</p><div><span class="t-badge">C-Suite</span><span class="t-badge">EEOC</span></div></div>
       <div class="s-card sr d3"><div class="s-icon">🏠</div><h3>Real Estate & Property</h3><p>Complex commercial acquisitions, zoning disputes, title litigation, and landmark development negotiations.</p><div><span class="t-badge">Commercial</span><span class="t-badge">Zoning</span></div></div>
     </div>
   </section>
 
-  <!-- NOTABLE WORK -->
+  <!-- NOTABLE WORK - Images text always visible -->
   <section class="sec" id="results">
     <div class="sec-label sr">Landmark Results</div>
     <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
@@ -157,16 +156,77 @@
       <p class="sec-sub sr" style="font-size:.84rem">$4.2B+ recovered for clients. Zero compromises.</p>
     </div>
     <div class="img-grid sr">
-      <div class="ic"><img src="./img/666933a7aa7b6e37c36a956c_6e6124b2-f0ea-4137-9b28-8223c9cf5269 (1).webp" alt="Courtroom"/><div class="ic-ov"><span>Courtroom Advocacy →</span></div></div>
-      <div class="ic"><img src="./img/business-male-lawyer-judge-consult-having-team-meeting-client-law-legal-services-concept-customer-service-good-433211513.webp" alt="Corporate"/><div class="ic-ov"><span>Corporate Defense →</span></div></div>
-      <div class="ic"><img src="./img/images (3).webp" alt="Negotiation"/><div class="ic-ov"><span>High-Stakes Negotiation →</span></div></div>
-      <div class="ic"><img src="./img/images.webp" alt="M&A"/><div class="ic-ov"><span>M&amp;A Advisory →</span></div></div>
-      <div class="ic"><img src="./img/images (1).webp" alt="International"/><div class="ic-ov"><span>International Arbitration →</span></div></div>
+      <div class="ic" onclick="window.location.href='404.html'">
+        <img src="./img/666933a7aa7b6e37c36a956c_6e6124b2-f0ea-4137-9b28-8223c9cf5269 (1).webp" alt="Courtroom"/>
+        <div class="ic-ov always-visible"><span>Courtroom Advocacy →</span></div>
+      </div>
+      <div class="ic" onclick="window.location.href='404.html'">
+        <img src="./img/business-male-lawyer-judge-consult-having-team-meeting-client-law-legal-services-concept-customer-service-good-433211513.webp" alt="Corporate"/>
+        <div class="ic-ov always-visible"><span>Corporate Defense →</span></div>
+      </div>
+      <div class="ic" onclick="window.location.href='404.html'">
+        <img src="./img/images (3).webp" alt="Negotiation"/>
+        <div class="ic-ov always-visible"><span>High-Stakes Negotiation →</span></div>
+      </div>
+      <div class="ic" onclick="window.location.href='404.html'">
+        <img src="./img/images.webp" alt="M&A"/>
+        <div class="ic-ov always-visible"><span>M&amp;A Advisory →</span></div>
+      </div>
+      <div class="ic" onclick="window.location.href='404.html'">
+        <img src="./img/images (1).webp" alt="International"/>
+        <div class="ic-ov always-visible"><span>International Arbitration →</span></div>
+      </div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:3rem">
-      <div class="tilt-card sr d1"><div class="tilt-glow"></div><div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">$</div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">$1.4B Verdict</h3><p style="font-size:.82rem;color:var(--text2);line-height:1.7">Securities fraud class action — largest verdict in state history. Represented 40,000+ institutional investors.</p><p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">Financial Services →</p></div>
-      <div class="tilt-card sr d2"><div class="tilt-glow"></div><div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">🌐</div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">Cross-Border Acquittal</h3><p style="font-size:.82rem;color:var(--text2);line-height:1.7">Secured full acquittal in multi-jurisdictional FCPA prosecution spanning 5 countries over 3 years.</p><p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">White-Collar Defense →</p></div>
-      <div class="tilt-card sr d3"><div class="tilt-glow"></div><div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">🏛</div><h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">$800M M&A Defense</h3><p style="font-size:.82rem;color:var(--text2);line-height:1.7">Successfully defended hostile takeover bid, preserving board control and shareholder value for a global pharmaceutical.</p><p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">M&amp;A Litigation →</p></div>
+      <div class="tilt-card sr d1" onclick="window.location.href='404.html'" style="cursor:pointer">
+        <div class="tilt-glow"></div>
+        <div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">$</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">$1.4B Verdict</h3>
+        <p style="font-size:.82rem;color:var(--text2);line-height:1.7">Securities fraud class action — largest verdict in state history. Represented 40,000+ institutional investors.</p>
+        <p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">Financial Services →</p>
+      </div>
+      <div class="tilt-card sr d2" onclick="window.location.href='404.html'" style="cursor:pointer">
+        <div class="tilt-glow"></div>
+        <div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">🌐</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">Cross-Border Acquittal</h3>
+        <p style="font-size:.82rem;color:var(--text2);line-height:1.7">Secured full acquittal in multi-jurisdictional FCPA prosecution spanning 5 countries over 3 years.</p>
+        <p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">White-Collar Defense →</p>
+      </div>
+      <div class="tilt-card sr d3" onclick="window.location.href='404.html'" style="cursor:pointer">
+        <div class="tilt-glow"></div>
+        <div style="font-size:1.8rem;margin-bottom:1rem;color:var(--gold)">🏛</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--ivory);margin-bottom:.5rem">$800M M&A Defense</h3>
+        <p style="font-size:.82rem;color:var(--text2);line-height:1.7">Successfully defended hostile takeover bid, preserving board control and shareholder value for a global pharmaceutical.</p>
+        <p style="color:var(--gold3);margin-top:1rem;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600">M&amp;A Litigation →</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION 1: Why Choose Stackly -->
+  <section class="sec why-stackly" style="background:var(--bg3)">
+    <div class="sec-label sr">Why Choose Us</div>
+    <h2 class="sec-title sr">The Stackly<br>Difference</h2>
+    <div class="why-grid">
+      <div class="why-card sr d1">
+        <div class="why-icon">🎯</div>
+        <h3>Unmatched Trial Experience</h3>
+        <p>Over 4,800 cases tried to verdict with a 98% success rate. Our partners have argued before the Supreme Court, federal appellate courts, and international tribunals.</p>
+      </div>
+      <div class="why-card sr d2">
+        <div class="why-icon">🤝</div>
+        <h3>Genuine Partnership</h3>
+        <p>We don't just represent you — we become your strategic partner. Every client receives direct access to senior partners, not just associates.</p>
+      </div>
+      <div class="why-card sr d3">
+        <div class="why-icon">⚡</div>
+        <h3>Rapid Response</h3>
+        <p>Time is critical in legal matters. Our 4-hour response guarantee ensures you're never left waiting during crucial moments.</p>
+      </div>
+      <div class="why-card sr d4">
+        <div class="why-icon">🌍</div>
+        <h3>Global Reach</h3>
+        <p>Licensed in all 50 U.S. states and admitted to practice before international courts across 60+ jurisdictions worldwide.</p>
+      </div>
     </div>
   </section>
 
@@ -213,6 +273,38 @@
     </div>
   </section>
 
+  <!-- NEW SECTION 2: Industry Recognition -->
+  <section class="sec recognition">
+    <div class="sec-label sr">Accolades</div>
+    <h2 class="sec-title sr">Industry Recognition<br>& Awards</h2>
+    <div class="recognition-grid">
+      <div class="recog-card sr d1">
+        <div class="recog-year">2024</div>
+        <div class="recog-title">Best Law Firm of the Year</div>
+        <div class="recog-org">The American Lawyer</div>
+        <p>Recognized for outstanding achievement in corporate litigation and client service excellence.</p>
+      </div>
+      <div class="recog-card sr d2">
+        <div class="recog-year">2023-2024</div>
+        <div class="recog-title">Top 100 Global Law Firms</div>
+        <div class="recog-org">Chambers & Partners</div>
+        <p>Ranked among the world's leading law firms for international arbitration and cross-border disputes.</p>
+      </div>
+      <div class="recog-card sr d3">
+        <div class="recog-year">2024</div>
+        <div class="recog-title">Client Choice Award</div>
+        <div class="recog-org">International Law Office</div>
+        <p>Based entirely on client feedback — 98% of clients would recommend Stackly to peers.</p>
+      </div>
+      <div class="recog-card sr d4">
+        <div class="recog-year">2023</div>
+        <div class="recog-title">Pro Bono Impact Award</div>
+        <div class="recog-org">Legal Aid Society</div>
+        <p>Recognized for 10,000+ pro bono hours dedicated to underserved communities.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- PROCESS -->
   <section class="sec" id="process">
     <div class="sec-label sr">Our Approach</div>
@@ -226,23 +318,76 @@
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+      <!-- TESTIMONIALS - Fixed Box Size -->
   <section class="sec" style="background:var(--bg2)">
     <div class="sec-label sr">Client Confidence</div>
-    <div class="test-wrap sr">
-      <p class="test-text">"When our company faced the most serious securities litigation in its history, Stackly's team was the only call we needed to make. They didn't just defend us — they dismantled the opposing case with surgical precision and secured a complete dismissal. We owe our company's survival to their brilliance."</p>
-      <div class="test-author">
-        <div class="t-av">RK</div>
-        <div><p class="t-name">Robert Kessler</p><p class="t-role">Chief Executive Officer — Meridian Capital Group</p></div>
+    <div class="testimonial-showcase">
+      <!-- Card 1 - Robert Kessler -->
+      <div class="test-wrap sr">
+        <p class="test-text">"When our company faced the most serious securities litigation in its history, Stackly's team was the only call we needed to make. They didn't just defend us — they dismantled the opposing case with surgical precision and secured a complete dismissal."</p>
+        <div class="test-author">
+          <div class="t-av">RK</div>
+          <div>
+            <p class="t-name">Robert Kessler</p>
+            <p class="t-role">CEO — Meridian Capital Group</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2 - Maria Teresa Santos -->
+      <div class="test-wrap sr d2">
+        <p class="test-text">"Stackly's international arbitration team secured a landmark victory for us against a sovereign entity. Their strategic approach, attention to detail, and relentless advocacy resulted in a $340 million award."</p>
+        <div class="test-author">
+          <div class="t-av">MT</div>
+          <div>
+            <p class="t-name">Maria Teresa Santos</p>
+            <p class="t-role">General Counsel — Global Energy Partners</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3 - Dr. Jonathan Davies -->
+      <div class="test-wrap sr d3">
+        <p class="test-text">"The white-collar defense team at Stackly saved my career. Facing federal prosecution, they negotiated a complete declination and protected my professional reputation. Their former-prosecutor insight was invaluable."</p>
+        <div class="test-author">
+          <div class="t-av">JD</div>
+          <div>
+            <p class="t-name">Dr. Jonathan Davies</p>
+            <p class="t-role">Former Fortune 500 Executive</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="img-row">
-      <div class="irc sr d1"><img src="./img/images (4).webp" alt="Office"/><div class="ic-ov"><span>Our Offices</span></div></div>
-      <div class="irc sr d2"><img src="./img/1183175189-640w.webp" alt="Library"/><div class="ic-ov"><span>Legal Research</span></div></div>
-      <div class="irc sr d3"><img src="./img/legal-services-concept-gavel-word-legal-services-sound-block-legal-services-101424374.webp" alt="Strategy"/><div class="ic-ov"><span>Case Strategy</span></div></div>
-      <div class="irc sr d4"><img src="./img/business-law-firm.webp" alt="Client"/><div class="ic-ov"><span>Client Advisory</span></div></div>
+    
+    <!-- Client Confidence Images Row - Fixed -->
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 40px; width: 100%; max-width: 100%;">
+      <div style="flex: 1; min-width: 180px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(201,168,76,0.18); cursor: pointer;" onclick="window.location.href='404.html'">
+        <img src="./img/images (4).webp" alt="Office" style="width: 100%; height: 180px; object-fit: cover; display: block;"/>
+        <div style="padding: 10px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); margin-top: -40px; position: relative; text-align: center;">
+          <span style="color: var(--gold); font-size: 12px; font-weight: 600;">Our Offices →</span>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 180px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(201,168,76,0.18); cursor: pointer;" onclick="window.location.href='404.html'">
+        <img src="./img/1183175189-640w.webp" alt="Library" style="width: 100%; height: 180px; object-fit: cover; display: block;"/>
+        <div style="padding: 10px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); margin-top: -40px; position: relative; text-align: center;">
+          <span style="color: var(--gold); font-size: 12px; font-weight: 600;">Legal Research →</span>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 180px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(201,168,76,0.18); cursor: pointer;" onclick="window.location.href='404.html'">
+        <img src="./img/legal-services-concept-gavel-word-legal-services-sound-block-legal-services-101424374.webp" alt="Strategy" style="width: 100%; height: 180px; object-fit: cover; display: block;"/>
+        <div style="padding: 10px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); margin-top: -40px; position: relative; text-align: center;">
+          <span style="color: var(--gold); font-size: 12px; font-weight: 600;">Case Strategy →</span>
+        </div>
+      </div>
+      <div style="flex: 1; min-width: 180px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(201,168,76,0.18); cursor: pointer;" onclick="window.location.href='404.html'">
+        <img src="./img/business-law-firm.webp" alt="Client" style="width: 100%; height: 180px; object-fit: cover; display: block;"/>
+        <div style="padding: 10px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); margin-top: -40px; position: relative; text-align: center;">
+          <span style="color: var(--gold); font-size: 12px; font-weight: 600;">Client Advisory →</span>
+        </div>
+      </div>
     </div>
   </section>
+
 
   <!-- CTA -->
   <section class="cta-sec" id="contact">
@@ -252,7 +397,7 @@
       <div class="gold-divider" style="margin:1rem auto 1.5rem"></div>
       <p>Speak directly with a senior partner. We review every case personally and respond within 4 hours.</p>
       <div class="cta-acts">
-       <button class="btn-prim" onclick="window.location.href='404.html'">Request Consultation →</button>
+        <button class="btn-prim" onclick="window.location.href='404.html'">Request Consultation →</button>
         <button class="btn-sec" onclick="window.location.href='404.html'">View Practice Areas</button>
       </div>
       <p style="color:var(--text3);font-size:.74rem;margin-top:1.8rem;letter-spacing:.06em">contact@stackly.com · 6383688595 · All inquiries attorney-client privileged</p>
@@ -263,8 +408,7 @@
   <footer>
     <div class="ft-grid">
       <div class="ft-brand">
-        <div class="ft-brand-name" onclick="scrollToHero()">
-        
+        <div class="ft-brand-name" onclick="location.reload();" style="cursor:pointer">
           <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
         </div>
         <div class="ft-tagline">Justice. Precision. Excellence.</div>
@@ -276,7 +420,7 @@
         </div>
       </div>
       <div class="ft-col"><h4>Firm</h4><a href="404.html">About Stackly</a><a href="404.html">Notable Cases</a><a href="404.html">Awards & Rankings</a><a href="404.html">Careers</a><a href="404.html">Pro Bono</a></div>
-      <div class="ft-col"><h4><a onclick="scrollToHero()">Home</a></h4><a href="404.html">about</a><a href="404.html">M&amp;practice </a><a href="404.html">attorneys</a><a href="404.html">results </a><a href="404.html">contact</a></div>
+      <div class="ft-col"><h4>Home</h4><a href="404.html">about </a> <a href="404.html">practice </a><a href="404.html">Attorneys</a><a href="404.html">Landmark Results</a><a href="404.html">Our Process</a><a href="404.html">Contact</a></div>
       <div class="ft-col"><h4>Client</h4><a onclick="window.location.href='404.html'">Client Portal</a><a onclick="window.location.href='404.html'">Free Consultation</a><a href="404.html">Legal Resources</a><a href="404.html">Emergency Counsel</a><a href="404.html">Pay Invoice</a></div>
     </div>
     <div class="ft-disclaimer">Attorney advertising. Prior results do not guarantee a similar outcome. Stackly LLP is licensed to practice law in all 50 U.S. states and select international jurisdictions. © 2026 Stackly LLP — All rights reserved.</div>
@@ -315,59 +459,6 @@ function showHomePage(){
   document.getElementById('page-home').classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
   setTimeout(()=>initReveal(),100);
-}
-function showLoginPage(){
-  ['page-home','page-login','page-register'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active')});
-  document.getElementById('page-login').classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-function showRegisterPage(){
-  ['page-home','page-login','page-register'].forEach(id=>{const el=document.getElementById(id);if(el)el.classList.remove('active')});
-  document.getElementById('page-register').classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function handleLogin(e){
-  e.preventDefault();
-  const email=document.getElementById('l-email').value.trim();
-  const pass=document.getElementById('l-pass').value;
-  const errEl=document.getElementById('login-err');
-  const okEl=document.getElementById('login-ok');
-  errEl.classList.remove('show');okEl.classList.remove('show');
-  if(!email||!pass){errEl.textContent='Please complete all fields.';errEl.classList.add('show');return;}
-  if(pass.length<6){errEl.textContent='Password must be at least 6 characters.';errEl.classList.add('show');return;}
-  const btn=e.target.querySelector('.auth-btn');
-  if(btn){btn.textContent='Authenticating…';btn.disabled=true;}
-  setTimeout(()=>{
-    okEl.textContent='Identity verified. Preparing your portal...';okEl.classList.add('show');
-    if(btn){btn.textContent='Access Client Portal';btn.disabled=false;}
-    setTimeout(()=>window.location.href='404.html',1500);
-  },1300);
-}
-
-function handleRegister(e){
-  e.preventDefault();
-  const first=document.getElementById('r-first').value.trim();
-  const last=document.getElementById('r-last').value.trim();
-  const email=document.getElementById('r-email').value.trim();
-  const company=document.getElementById('r-company').value.trim();
-  const pass=document.getElementById('r-pass').value;
-  const pass2=document.getElementById('r-pass2').value;
-  const terms=document.getElementById('r-terms').checked;
-  const errEl=document.getElementById('reg-err');
-  const okEl=document.getElementById('reg-ok');
-  errEl.style.display='none';okEl.style.display='none';
-  if(!first||!last||!email||!company||!pass||!pass2){errEl.textContent='Please complete all required fields.';errEl.style.display='block';return;}
-  if(pass.length<8){errEl.textContent='Password must be at least 8 characters.';errEl.style.display='block';return;}
-  if(pass!==pass2){errEl.textContent='Passwords do not match.';errEl.style.display='block';return;}
-  if(!terms){errEl.textContent='Please acknowledge the Terms of Engagement.';errEl.style.display='block';return;}
-  const btn=e.target.querySelector('.auth-btn');
-  if(btn){btn.textContent='Submitting Request…';btn.disabled=true;}
-  setTimeout(()=>{
-    okEl.textContent='Request received. A senior partner will contact you within 4 hours.';okEl.style.display='block';
-    if(btn){btn.textContent='Request Confidential Consultation';btn.disabled=false;}
-    setTimeout(()=>window.location.href='404.html',1800);
-  },1500);
 }
 
 const navbar=document.getElementById('navbar');
@@ -437,6 +528,12 @@ document.querySelectorAll('.tilt-card').forEach(card=>{
 });
 
 document.getElementById('nl-home').classList.add('active-link');
+
+// Set mobile home link color to golden
+const mobileHomeLink = document.getElementById('mobile-home');
+if(mobileHomeLink) {
+  mobileHomeLink.style.color = 'var(--gold)';
+}
 </script>
 </body>
 </html>

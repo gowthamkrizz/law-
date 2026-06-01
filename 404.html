@@ -3,101 +3,320 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>404 — Page Not Found | Stackly</title>
+<title>404 - Page Not Found | Stackly Law Firm</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
 <style>
-  /* 404-specific styles not in style.css */
-  body{display:flex;flex-direction:column;min-height:100vh}
-  #page-404{
-    display:flex;align-items:center;justify-content:center;
-    min-height:100vh;padding-top:70px;
-    background:var(--bg);text-align:center;
-    flex:1;
-  }
-  .err-wrap{padding:2rem;position:relative}
-  .err-404{font-family:'Cormorant Garamond',serif;font-size:clamp(7rem,20vw,14rem);font-weight:700;line-height:1;background:linear-gradient(135deg,var(--gold3),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeInDown .8s ease both;font-style:italic}
-  .err-wrap h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:600;color:var(--ivory);margin-bottom:.8rem;animation:fadeInUp .8s .15s ease both;font-style:italic}
-  .err-wrap p{color:var(--text2);font-size:.95rem;margin-bottom:2rem;animation:fadeInUp .8s .3s ease both;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.8}
-  .err-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeInUp .8s .45s ease both}
-  .err-orb{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(201,168,76,.07),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:-1}
-  .back-home-btn{background:var(--gold);color:var(--bg);padding:.88rem 2.2rem;border-radius:3px;font-weight:700;font-size:.8rem;cursor:pointer;border:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
-  .back-home-btn:hover{transform:translateY(-3px);box-shadow:0 12px 32px var(--shadow2);background:var(--gold2)}
-  .btn-sec-link{background:transparent;color:var(--gold);padding:.88rem 2.2rem;border-radius:3px;font-weight:500;font-size:.8rem;cursor:pointer;border:1px solid rgba(201,168,76,.4);transition:all .3s;display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;text-decoration:none;letter-spacing:.1em;text-transform:uppercase}
-  .btn-sec-link:hover{border-color:var(--gold);background:rgba(201,168,76,.07)}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0D0C0A;
+  --bg2:#111009;
+  --gold:#C9A84C;
+  --gold2:#E2C068;
+  --gold3:#A8893A;
+  --ivory:#F5EDD8;
+  --ivory2:#E8DEC4;
+  --text:#F0E8D5;
+  --text2:#B8AC94;
+  --surface:#18160F;
+  --border:rgba(201,168,76,0.18);
+}
+body{
+  font-family:'Montserrat',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+/* NAVBAR */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  padding:0 5%;display:flex;align-items:center;justify-content:space-between;
+  height:68px;background:rgba(7,0,0,0.95);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo-img{height:40px;width:auto;display:block;object-fit:contain;cursor:pointer}
+.nav-links{display:flex;align-items:center;gap:1.8rem;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;transition:color .3s;cursor:pointer}
+.nav-links a:hover{color:var(--gold)}
+/* Home link special style */
+.nav-links a.home-link{color:var(--gold);}
+.nav-links a.home-link:hover{color:var(--gold2);}
+.nav-auth{display:flex;align-items:center;gap:.75rem}
+.btn-login{background:transparent;color:var(--gold);padding:.5rem 1.2rem;border-radius:3px;font-size:.78rem;font-weight:600;cursor:pointer;border:1px solid var(--gold);transition:all .3s;font-family:'Montserrat',sans-serif}
+.btn-login:hover{background:rgba(201,168,76,.1)}
+.btn-register{background:var(--gold);color:var(--bg);padding:.5rem 1.2rem;border-radius:3px;font-size:.78rem;font-weight:700;cursor:pointer;border:none;transition:all .3s;font-family:'Montserrat',sans-serif}
+.btn-register:hover{transform:translateY(-2px);background:var(--gold2)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.hamburger span{width:22px;height:1.5px;background:var(--gold);border-radius:1px;transition:all .3s}
+
+/* 404 CONTENT */
+.error-container{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 20px 40px;
+}
+.error-content{
+  max-width:600px;
+  animation:fadeInUp 0.8s ease;
+}
+.error-code{
+  font-size:140px;
+  font-weight:800;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  font-family:'Cormorant Garamond',serif;
+  line-height:1;
+}
+.error-icon{
+  font-size:4rem;
+  margin:1rem 0;
+  opacity:0.8;
+}
+.error-title{
+  font-size:2rem;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  color:var(--ivory);
+  margin-bottom:1rem;
+  font-style:italic;
+}
+.error-message{
+  color:var(--text2);
+  font-size:1rem;
+  line-height:1.7;
+  margin-bottom:2rem;
+}
+.home-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--gold);
+  color:var(--bg);
+  padding:12px 28px;
+  border-radius:3px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:.85rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  transition:all .3s;
+  cursor:pointer;
+}
+.home-btn:hover{
+  transform:translateY(-2px);
+  background:var(--gold2);
+  box-shadow:0 8px 25px rgba(201,168,76,0.3);
+}
+.quick-links{
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid var(--border);
+}
+.quick-links h4{
+  font-size:.75rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:1rem;
+}
+.link-group{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:1rem;
+}
+.link-group a{
+  color:var(--text2);
+  text-decoration:none;
+  font-size:.8rem;
+  transition:color .3s;
+  cursor:pointer;
+}
+.link-group a:hover{
+  color:var(--gold);
+}
+.link-group a.home-link{
+  color:var(--gold);
+}
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(max-width:768px){
+  .nav-links,.nav-auth{display:none}
+  .hamburger{display:flex}
+  .error-code{font-size:100px}
+  .error-title{font-size:1.5rem}
+}
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav id="navbar">
-  <a class="nav-logo" href="index.html">
-    <div class="logo-emblem">⚖</div>
+  <span class="nav-logo" onclick="goToHome()">
     <img src="./img/stackly-removebg-preview.webp" alt="Stackly law" class="nav-logo-img"/>
-  </a>
+  </span>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="index.html#practice">Practice</a></li>
-    <li><a href="index.html#attorneys">Attorneys</a></li>
-    <li><a href="index.html#results">Results</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
+    <li><a class="home-link" onclick="goToHome()" style="cursor:pointer">Home</a></li>
+    <li><a onclick="stayOn404()" style="cursor:pointer">About</a></li>
+    <li><a onclick="stayOn404()" style="cursor:pointer">Practice</a></li>
+    <li><a onclick="stayOn404()" style="cursor:pointer">Attorneys</a></li>
+    <li><a onclick="stayOn404()" style="cursor:pointer">Results</a></li>
+    <li><a onclick="stayOn404()" style="cursor:pointer">Contact</a></li>
   </ul>
   <div class="nav-auth">
-    <a class="btn-login" href="login.html">Client Login</a>
-    <a class="btn-register" href="register.html">Free Consultation</a>
+    <button class="btn-login" onclick="stayOn404()">Client Login</button>
+    <button class="btn-register" onclick="stayOn404()">Free Consultation</button>
   </div>
-  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="closeMenu()">Home</a>
-  <a href="index.html#practice" onclick="closeMenu()">Practice Areas</a>
-  <a href="index.html#attorneys" onclick="closeMenu()">Attorneys</a>
-  <a href="index.html#results" onclick="closeMenu()">Results</a>
-  <a href="index.html#contact" onclick="closeMenu()">Contact</a>
-  <div class="mobile-divider"></div>
-  <div class="mobile-auth">
-    <a class="btn-login" href="login.html">Client Login</a>
-    <a class="btn-register" href="register.html">Consult Free</a>
-  </div>
-</div>
-
-<!-- 404 CONTENT -->
-<div id="page-404">
-  <div class="err-wrap">
-    <div class="err-orb"></div>
-    <div class="err-404">404</div>
-    <h2>Page Not Found</h2>
-    <p>The page you seek appears to have left the jurisdiction. Let us guide you back to solid legal ground.</p>
-    <div class="err-actions">
-      <a class="back-home-btn" href="index.html">⟵ Return to Stackly</a>
-      <a class="btn-sec-link" href="index.html#contact">Contact Us</a>
+<div class="error-container">
+  <div class="error-content">
+    <div class="error-code">404</div>
+    <div class="error-icon">⚖️</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-message">
+      The page you're looking for seems to have wandered off into legal archives.<br>
+      It might have been removed, renamed, or never existed in the first place.
+    </p>
+    <div class="home-btn" onclick="goToHome()">
+      ← Return to Homepage
+    </div>
+    
+    <div class="quick-links">
+      <h4>Quick Navigation</h4>
+      <div class="link-group">
+        <a class="home-link" onclick="goToHome()" style="cursor:pointer">Home</a>
+        <a onclick="stayOn404()" style="cursor:pointer">About Us</a>
+        <a onclick="stayOn404()" style="cursor:pointer">Practice Areas</a>
+        <a onclick="stayOn404()" style="cursor:pointer">Attorneys</a>
+        <a onclick="stayOn404()" style="cursor:pointer">Results</a>
+        <a onclick="stayOn404()" style="cursor:pointer">Contact</a>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-function closeMenu() {
-  hamburger.classList.remove('open');
-  mobileMenu.classList.remove('open');
-  document.body.style.overflow = '';
+// Function to go to Home page (index.html)
+function goToHome() {
+  window.location.href = 'index.html';
 }
-if (hamburger) {
+
+// Function to stay on 404 page
+function stayOn404() {
+  window.location.href = '404.html';
+}
+
+// Mobile menu setup
+const hamburger = document.getElementById('hamburger');
+let mobileMenu = null;
+let isMenuOpen = false;
+
+function createMobileMenu() {
+  if(mobileMenu) return;
+  
+  mobileMenu = document.createElement('div');
+  mobileMenu.className = 'mobile-menu';
+  mobileMenu.style.cssText = `
+    position:fixed; top:0; left:0; right:0; bottom:0;
+    background:#0D0C0A; z-index:998;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:1.2rem; transform:translateX(100%);
+    transition:transform .45s cubic-bezier(.77,0,.175,1);
+  `;
+  
+  // Home link (goes to index)
+  const homeLink = document.createElement('a');
+  homeLink.textContent = 'Home';
+  homeLink.style.cssText = `font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:600; color:var(--gold); text-decoration:none; cursor:pointer;`;
+  homeLink.onclick = () => { goToHome(); closeMobileMenu(); };
+  mobileMenu.appendChild(homeLink);
+  
+  // Other links (stay on 404)
+  const links = ['About', 'Practice', 'Attorneys', 'Results', 'Contact'];
+  links.forEach(link => {
+    const a = document.createElement('a');
+    a.textContent = link;
+    a.style.cssText = `font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:600; color:var(--text); text-decoration:none; cursor:pointer;`;
+    a.onmouseenter = () => a.style.color = 'var(--gold)';
+    a.onmouseleave = () => a.style.color = 'var(--text)';
+    a.onclick = () => { stayOn404(); closeMobileMenu(); };
+    mobileMenu.appendChild(a);
+  });
+  
+  const divider = document.createElement('div');
+  divider.style.cssText = 'width:50px;height:1px;background:var(--border);margin:1rem 0';
+  mobileMenu.appendChild(divider);
+  
+  const authDiv = document.createElement('div');
+  authDiv.style.cssText = 'display:flex;gap:1rem';
+  
+  const loginBtn = document.createElement('button');
+  loginBtn.textContent = 'Client Login';
+  loginBtn.style.cssText = 'background:transparent;color:var(--gold);padding:0.5rem 1.2rem;border:1px solid var(--gold);border-radius:3px;cursor:pointer';
+  loginBtn.onclick = () => { stayOn404(); closeMobileMenu(); };
+  
+  const consultBtn = document.createElement('button');
+  consultBtn.textContent = 'Free Consultation';
+  consultBtn.style.cssText = 'background:var(--gold);color:var(--bg);padding:0.5rem 1.2rem;border:none;border-radius:3px;cursor:pointer';
+  consultBtn.onclick = () => { stayOn404(); closeMobileMenu(); };
+  
+  authDiv.appendChild(loginBtn);
+  authDiv.appendChild(consultBtn);
+  mobileMenu.appendChild(authDiv);
+  
+  document.body.appendChild(mobileMenu);
+}
+
+function openMobileMenu() {
+  createMobileMenu();
+  mobileMenu.style.transform = 'translateX(0)';
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  isMenuOpen = true;
+}
+
+function closeMobileMenu() {
+  if(mobileMenu) {
+    mobileMenu.style.transform = 'translateX(100%)';
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+    isMenuOpen = false;
+  }
+}
+
+if(hamburger) {
   hamburger.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    if(isMenuOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
   });
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape' && isMenuOpen) {
+    closeMobileMenu();
+  }
+});
+
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if(nav) nav.style.background = window.scrollY > 50 ? 'rgba(7,0,0,0.98)' : 'rgba(7,0,0,0.95)';
+});
 </script>
 </body>
 </html>
