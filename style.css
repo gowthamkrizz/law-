@@ -635,17 +635,125 @@ section.sec{padding:5.5rem 5%;position:relative}
 .sec-sub{font-size:.92rem;color:var(--text2);max-width:540px;line-height:1.85}
 
 /* PRACTICE AREA CARDS */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.2rem;margin-top:3rem}
-.s-card{background:var(--card);border:1px solid var(--border2);border-radius:4px;padding:2.2rem;transition:all .4s ease;position:relative;overflow:hidden}
-.s-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .5s}
-.s-card:hover{transform:translateY(-5px);border-color:rgba(201,168,76,.3);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 0 1px rgba(201,168,76,.08)}
-.s-card:hover::before{transform:scaleX(1)}
-.s-icon{width:48px;height:48px;border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.3rem;transition:all .4s;background:rgba(201,168,76,.04)}
-.s-card:hover .s-icon{border-color:var(--gold);background:rgba(201,168,76,.1);transform:scale(1.08)}
-.s-card h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:.6rem;color:var(--ivory);font-style:italic}
-.s-card p{color:var(--text2);font-size:.82rem;line-height:1.7}
-.t-badge{display:inline-flex;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.15);border-radius:2px;padding:.18rem .6rem;font-size:.68rem;color:var(--gold3);margin:.3rem .12rem 0 0;font-weight:500;letter-spacing:.05em}
+/* ============================================================ 
+   FIX: Practice Areas Card Alignment - Consistent Heights
+   ============================================================ */
 
+/* Make all practice cards have equal height */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  align-items: stretch;
+}
+
+.s-card {
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-radius: 4px;
+  padding: 2rem 1.8rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  
+  /* CRITICAL FIXES for consistent heights */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 380px;
+}
+
+/* Make description text expand to fill space */
+.s-card p {
+  color: var(--text2);
+  font-size: 0.82rem;
+  line-height: 1.7;
+  margin: 0.75rem 0 1.25rem 0;
+  
+  /* Allow text to grow but maintain structure */
+  flex-grow: 1;
+}
+
+/* Ensure the badges section stays at the bottom */
+.s-card > div:last-child {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Icon stays consistent */
+.s-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1.3rem;
+  transition: all 0.4s;
+  background: rgba(201, 168, 76, 0.04);
+  flex-shrink: 0;
+}
+
+/* Heading styles consistent */
+.s-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ivory);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+/* Badge styling */
+.t-badge {
+  display: inline-flex;
+  background: rgba(201, 168, 76, 0.07);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 2px;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.68rem;
+  color: var(--gold3);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Hover effect maintains alignment */
+.s-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 168, 76, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(201, 168, 76, 0.08);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .s-card {
+    min-height: 360px;
+    padding: 1.8rem 1.5rem;
+  }
+  
+  .services-grid {
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-card {
+    min-height: auto;
+    padding: 1.5rem;
+  }
+  
+  .t-badge {
+    white-space: normal;
+  }
+}
 /* TILT INDUSTRY CARDS */
 .tilt-card{background:var(--card);border:1px solid var(--border2);border-radius:4px;padding:2rem;position:relative;overflow:hidden;transition:box-shadow .4s;cursor:default;transform-style:preserve-3d}
 .tilt-card:hover{box-shadow:0 25px 60px rgba(0,0,0,.5),0 0 0 1px rgba(201,168,76,.1)}
